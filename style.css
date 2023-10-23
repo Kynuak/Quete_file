@@ -1,0 +1,41 @@
+form {
+    margin-top: 3rem;
+}
+
+
+div.flex {
+
+    display: flex;
+    justify-content: space-around;
+
+}
+
+div.flex img {
+    width: 30%;
+    border: 1px solid black;
+    margin: 1rem 1.5rem 0 0;
+}
+
+div.flex.text {
+    text-align: center;
+}
+
+div.flex>div {
+    width: 60%;
+}
+
+p {
+    margin: 0;
+}
+
+p.sign {
+    margin: 1rem;
+}
+
+div.desc {
+    margin-top: 1rem;
+}
+
+h2 {
+    margin: 1rem;
+}
