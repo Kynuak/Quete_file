@@ -28,7 +28,7 @@
         }elseif(key($_POST) === 'send') {
             $fileName = $_FILES['avatar']['name'];
             $extension = strtolower(pathinfo($_FILES['avatar']['name'], PATHINFO_EXTENSION));
-            $fileNewName = uniqid("". true) . '.' . $extension;
+            $fileNewName = uniqid("image". true) . '.' . $extension;
             $uploadFile = $uploadDir.$fileNewName;
             $authorizedExtension = ['jpg', 'jpeg', 'png', 'webp', 'gif'];
             $maxFileSize = 1000000;
@@ -99,8 +99,16 @@
         </div>
         
     </article>
+    <?php 
+        $files = array_diff(scandir("./uploads"), [".", ".."]);
+        
+    ?>
     <form method="POST">
-        <input type="file" name="avatar">
+        <select name="avatar" id="avatar">
+            <?php foreach($files as $file): ?>
+                <option value="<?= $file ?>"><?= $file ?></option>
+            <?php endforeach ?>
+        </select>
         <button name="delete">Supprimer la photo de profil ?</button>
     </form>
 </body>
